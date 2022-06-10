@@ -38,8 +38,8 @@ class NhsNumber(DataGroup):
     def extract(self) -> None:
         print("Extracting nhs number data")
 
-    # def transform(self) -> None:
-    #     print("Transforming nhs number data")
+    def transform(self) -> None:
+        print("Transforming nhs number data")
 
     def validate_nhs_number(self) -> None:
         print("Validating nhs number")

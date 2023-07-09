@@ -7,6 +7,8 @@ fn main() {
 
     let secret_number = rand::thread_rng().gen_range(1..=100);
 
+    let mut already_guessed = Vec::new();
+
     loop {
         println!("Please input your guess.");
 
@@ -20,6 +22,14 @@ fn main() {
             Ok(num) => num,
             Err(_) => continue,
         };
+
+        if already_guessed.contains(&guess) {
+            println!("Already guessed: {guess}. Try another number");
+            continue
+        }
+        else {
+            already_guessed.push(guess)
+        }
 
         println!("You guessed: {guess}");
 
